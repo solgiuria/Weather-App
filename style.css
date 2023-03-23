@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+:root{
+    --dark-color:#06283D;
+    --light-color:#fff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Secular One', sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: var(--dark-color);
+}
+
+body h1{
+    font-size: 3rem;
+    margin-bottom: 5rem;
+    color: var(--light-color);
+}
+
+
+.container{
+    width: 400px;
+    height: 105px;
+    background:var(--light-color);
+    padding: 28px 32px;
+    overflow: hidden; /*como limita el container al box de busqueda esconde lo q sobra*/
+    border-radius: 18px;
+    font-family: 'Roboto', sans-serif;
+    transition: 0.6s ease-out; /*esto es claramente para cuando el tamano cambia*/
+}
+
+.search-box{
+    width: 100%;
+    height: min-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-box input{
+    color: var(--dark-color);
+    width: 80%;
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding-left: 40px;
+}
+
+.search-box input::placeholder{
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--dark-color);
+    text-transform: capitalize;
+}
+
+.search-box button{
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    color: var(--dark-color);
+    background: var(--light-color);
+    border-radius: 50%;
+    font-size: 22px;
+    transition: 0.4s ease;
+}
+
+.search-box button:hover{
+    color: var(--light-color);
+    background: var(--dark-color);
+}
+
+.search-box i{
+    position: absolute;
+    color: var(--dark-color);
+    font-size: 28px;
+}
+
+ .weather-box{
+    text-align: center;
+}
+
+.weather-box img{
+    width: 60%;
+    margin-top: 30px;
+}
+
+.weather-box .temperature{
+    position: relative;
+    color: var(--dark-color);
+    font-size: 4rem;
+    font-weight: 800;
+    margin-top: 30px;
+    margin-left: -16px;
+}
+
+.weather-box .temperature span{ /*esto se agrega en js*/
+    position: absolute;
+    margin-left: 4px;
+    font-size: 1.5rem;
+}
+
+.weather-box .description{
+    color: var(--dark-color);
+    font-size: 22px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.weather-details{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.weather-details .humidity, .weather-details .wind{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    /*como el witdh ocupa 50 y 50 no se ve lo rosa*/
+    height: 100px;
+}
+
+.weather-details .humidity{
+    padding-left: 20px;
+    justify-content: flex-start;
+}
+
+.weather-details .wind{
+    padding-right: 20px;
+    justify-content: flex-end;
+}
+
+.weather-details i{
+    color: var(--dark-color);
+    font-size: 26px;
+    margin-right: 10px;
+    margin-top: 6px;
+}
+
+.weather-details span{
+    color: var(--dark-color);
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.weather-details p{
+    color: var(--dark-color);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.not-found{
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    scale: 0;
+    opacity: 0;
+   display: none;
+}
+
+.not-found img{
+    width: 80%;
+}
+
+.not-found p{
+    color: var(--dark-color);
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 12px;
+}
+
+.weather-box, .weather-details{
+    scale: 0;
+    opacity: 0;
+
+}
+
+.fadeIn{
+    animation: 0.5s fadeIn forwards; /*lo que dura la ejecucion*/
+    animation-delay: 0.5s; /*cuanto tarda antes de ejecutarse la animacion*/
+}
+
+/*esto fade in se aplica directo en js para mostrar lo oculto,
+tanto para weather box como para weather details*/
+@keyframes fadeIn{
+    to {
+        scale: 1;
+        opacity: 1;
+    }
+}
