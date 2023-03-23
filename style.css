@@ -188,7 +188,8 @@ body h1{
 }
 
 .fadeIn{
-    animation: 0.5s fadeIn forwards; /*lo que dura la ejecucion*/
+    animation: 0.5s fadeIn forwards; /*poner todo en uno es para resumir a una linea, podria ir todo por separado*/
+    /*animation-fill-mode: forwards;*/ /*fill mode: como se completa la animacion*/
     animation-delay: 0.5s; /*cuanto tarda antes de ejecutarse la animacion*/
 }
 
@@ -200,3 +201,5 @@ tanto para weather box como para weather details*/
         opacity: 1;
     }
 }
+
+/*ACLARACION: forwards es una animacion donde los estilos determinados por el keyframe quedan establecidos y no vuelve a su estado original, si esto las img aparecerian pero pasados los 0.5s de duracion volverias a scale y opacity 0 */
