@@ -214,6 +214,12 @@ tanto para weather box como para weather details*/
         font-size: 2.2rem;
     }
    .container{
-    width: 83%;
+    width: 86%;
    }
+   .search-box input{
+    font-size: 21px;
+   }
+   .search-box input::placeholder{
+    font: 19px;
+   } 
 } 
